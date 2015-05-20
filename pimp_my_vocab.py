@@ -1,9 +1,13 @@
 import argparse
 
 
-def load_words_from_text_to_sql(fileName='', sqlConString='',
+def load_words_from_text_to_sql(filename='', sqlConString='',
                                 numOfLines=0, printDebugMsg=False):
-    fileWithWords = open(fileName, 'r', encoding='utf-8')
+    """
+
+    :type fileName: str
+    """
+    fileWithWords = open(filename, 'r', encoding='utf-8')
     listOfWords = fileWithWords.readlines()
     lineIndex = 0
     for line in listOfWords:
