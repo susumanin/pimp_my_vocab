@@ -10,12 +10,8 @@ class WordsRank(Base):
     __tablename__ = 'word_with_ranks'
     rank = Column(Integer, primary_key=True)
     word = Column(String)
+    know_status = Column(Integer)
 
-class WordStatus(Base):
-    __tablename__ = 'word_status'
-    word_rank = Column(Integer, primary_key=True)
-    word = Column(String)
-    status = Column(Integer)
 
 def load_words_from_text_to_sql(filename='', sqlConString='',
                                 numOfLines=0, printDebugMsg=False, startFrom=1):
