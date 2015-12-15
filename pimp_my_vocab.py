@@ -107,7 +107,7 @@ def set_status_for_words(numOfWords, fast_status):
             for word in cur_list:
                 print("{}. {}".format(k, word.word))
                 k = k + 1
-            user_input = input("y if you know all words, or indexses of words you don't know")
+            user_input = input("y if you know all words, or indexses of words you don't know: ")
             while True:
                 if user_input == 'y':
                     for word in cur_list:
@@ -115,6 +115,8 @@ def set_status_for_words(numOfWords, fast_status):
                     break
                 elif user_input == 'break':
                     break
+                elif len(user_input) == 0:
+                    break ## do nothing if input is empty
                 else:
                     parsed_indexes = user_input.split(' ')
                     for cur_index in parsed_indexes:
@@ -154,9 +156,8 @@ def main():
         startFrom = 1
     else:
         startFrom = args.startFrom
-    if args.printAll is None:
-        printAll = False
-    elif args.printAll == 1:
+    printAll = False
+    if args.printAll == 1:
         printAll = True
     if args.fast is None:
         fast_status = False
