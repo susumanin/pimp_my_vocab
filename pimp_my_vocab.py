@@ -146,7 +146,8 @@ def main():
     parser.add_argument('--fast', type=int, help='''1 - fast words status editing ''')
 
     args = parser.parse_args()
-    fileName = '/Users/mak/Documents/python_scripts/vocab/rank_word_count'
+    #fileName = '/Users/mak/Documents/python_scripts/vocab/rank_word_count'
+    fileName = 'd:/Eng/pimp_my_vocab/rank_word_count'
     sqlConString = ''
     if args.numOfLines is None:
         numOfLines = 0
